@@ -11,6 +11,7 @@ package com.mycompany.nba;
 public class NBA {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        CalculadoraEstadisticas calculadora = new CalculadoraEstadisticas();
+        calculadora.setVisible(true);
     }
 }
