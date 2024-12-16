@@ -6,7 +6,6 @@ import java.util.Arrays;
 import javax.swing.JRadioButton;
 import org.apache.poi.ss.usermodel.Workbook;
 
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -42,6 +41,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         JugadoresLakers = new javax.swing.ButtonGroup();
         JugadoresBulls = new javax.swing.ButtonGroup();
         radioEquipos = new javax.swing.ButtonGroup();
+        botonesFuente = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         tirosIntentados = new javax.swing.JTextField();
@@ -72,6 +72,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         FaltasReaDato = new javax.swing.JSpinner();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
+        componente1 = new com.mycompany.nba.Componente();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         graficoBarras = new javax.swing.JMenuItem();
@@ -435,6 +436,17 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 20, 0);
         jPanel2.add(jTextField11, gridBagConstraints);
 
+        componente1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        componente1.setText("Componente");
+        componente1.setPreferredSize(new java.awt.Dimension(155, 40));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 25, 20, 0);
+        jPanel2.add(componente1, gridBagConstraints);
+
         jTabbedPane1.addTab("Valoracion", jPanel2);
 
         jMenu1.setText("Gráficas");
@@ -509,16 +521,31 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
 
         Fuente.setText("Fuente");
 
-        radioPequeña.setSelected(true);
+        botonesFuente.add(radioPequeña);
         radioPequeña.setText("Pequeña");
+        radioPequeña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioPequeñaActionPerformed(evt);
+            }
+        });
         Fuente.add(radioPequeña);
 
-        radioMediana.setSelected(true);
+        botonesFuente.add(radioMediana);
         radioMediana.setText("Mediana");
+        radioMediana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMedianaActionPerformed(evt);
+            }
+        });
         Fuente.add(radioMediana);
 
-        radioGrande.setSelected(true);
+        botonesFuente.add(radioGrande);
         radioGrande.setText("Grande");
+        radioGrande.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioGrandeActionPerformed(evt);
+            }
+        });
         Fuente.add(radioGrande);
 
         jMenuBar1.add(Fuente);
@@ -744,6 +771,18 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         Graficas.guardarGraficoEnPDF2(img, img2, rutapdf, jugador, equipo);
         
     }//GEN-LAST:event_exportarPDFActionPerformed
+
+    private void radioPequeñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPequeñaActionPerformed
+        componente1.cambiarTamañoFuente(12);
+    }//GEN-LAST:event_radioPequeñaActionPerformed
+
+    private void radioMedianaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMedianaActionPerformed
+        componente1.cambiarTamañoFuente(14);
+    }//GEN-LAST:event_radioMedianaActionPerformed
+
+    private void radioGrandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioGrandeActionPerformed
+        componente1.cambiarTamañoFuente(16);
+    }//GEN-LAST:event_radioGrandeActionPerformed
     
     
     public static void main(String args[]) {
@@ -771,6 +810,8 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
     private javax.swing.JSpinner RobosDato;
     private javax.swing.JSpinner TaponesDato;
     private javax.swing.JSpinner TaponesRecDato;
+    private javax.swing.ButtonGroup botonesFuente;
+    private com.mycompany.nba.Componente componente1;
     private javax.swing.JMenuItem crearExcel;
     private javax.swing.JMenuItem escribirExcel;
     private javax.swing.JMenuItem exportarPDF;

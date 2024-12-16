@@ -10,6 +10,8 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="radioEquipos">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="botonesFuente">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -102,21 +104,36 @@
           <SubComponents>
             <MenuItem class="javax.swing.JRadioButtonMenuItem" name="radioPeque&#xf1;a">
               <Properties>
-                <Property name="selected" type="boolean" value="true"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="botonesFuente"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Peque&#xf1;a"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioPeque&#xf1;aActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JRadioButtonMenuItem" name="radioMediana">
               <Properties>
-                <Property name="selected" type="boolean" value="true"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="botonesFuente"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Mediana"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioMedianaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JRadioButtonMenuItem" name="radioGrande">
               <Properties>
-                <Property name="selected" type="boolean" value="true"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="botonesFuente"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Grande"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioGrandeActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -882,6 +899,26 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
                   <GridBagConstraints gridX="2" gridY="0" gridWidth="2" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="25" insetsBottom="20" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="com.mycompany.nba.Componente" name="componente1">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Componente"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[155, 40]"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                  <GridBagConstraints gridX="2" gridY="4" gridWidth="2" gridHeight="2" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="25" insetsBottom="20" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
                 </Constraint>
               </Constraints>
             </Component>
