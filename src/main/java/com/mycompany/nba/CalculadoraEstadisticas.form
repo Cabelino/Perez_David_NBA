@@ -25,6 +25,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graficoBarrasActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="graficoLineas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Gr&#xe1;fico lineas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graficoLineasActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exportarPDF">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Gr&#xe1;fico PDF"/>

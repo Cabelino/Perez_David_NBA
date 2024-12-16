@@ -75,6 +75,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         graficoBarras = new javax.swing.JMenuItem();
+        graficoLineas = new javax.swing.JMenuItem();
         exportarPDF = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         crearExcel = new javax.swing.JMenuItem();
@@ -442,6 +443,14 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         });
         jMenu1.add(graficoBarras);
 
+        graficoLineas.setText("Gráfico lineas");
+        graficoLineas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficoLineasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(graficoLineas);
+
         exportarPDF.setText("Gráfico PDF");
         jMenu1.add(exportarPDF);
 
@@ -508,7 +517,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
     }// </editor-fold>//GEN-END:initComponents
 
     private void graficoBarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficoBarrasActionPerformed
-         String ruta = "";
+        String ruta = "";
         
         if(radioLA.isSelected()){
             ruta = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Lakers.xlsx";
@@ -679,6 +688,19 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         
         
     }//GEN-LAST:event_escribirExcelActionPerformed
+
+    private void graficoLineasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficoLineasActionPerformed
+        String ruta = "";
+        
+        if(radioLA.isSelected()){
+            ruta = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Lakers.xlsx";
+        }
+        if(radioChicago.isSelected()){
+            ruta = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Bulls.xlsx";
+        }
+        String jugador = nombreJugadores.getSelectedItem().toString();
+        Graficas.mostrarGraficoDeLineas(ruta,jugador);
+    }//GEN-LAST:event_graficoLineasActionPerformed
     
     
     public static void main(String args[]) {
@@ -709,6 +731,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
     private javax.swing.JMenuItem escribirExcel;
     private javax.swing.JMenuItem exportarPDF;
     private javax.swing.JMenuItem graficoBarras;
+    private javax.swing.JMenuItem graficoLineas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
