@@ -83,6 +83,10 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         jMenu3 = new javax.swing.JMenu();
         radioLA = new javax.swing.JRadioButtonMenuItem();
         radioChicago = new javax.swing.JRadioButtonMenuItem();
+        Fuente = new javax.swing.JMenu();
+        radioPequeña = new javax.swing.JRadioButtonMenuItem();
+        radioMediana = new javax.swing.JRadioButtonMenuItem();
+        radioGrande = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -452,6 +456,11 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         jMenu1.add(graficoLineas);
 
         exportarPDF.setText("Gráfico PDF");
+        exportarPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportarPDFActionPerformed(evt);
+            }
+        });
         jMenu1.add(exportarPDF);
 
         jMenuBar1.add(jMenu1);
@@ -497,6 +506,22 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         jMenu3.add(radioChicago);
 
         jMenuBar1.add(jMenu3);
+
+        Fuente.setText("Fuente");
+
+        radioPequeña.setSelected(true);
+        radioPequeña.setText("Pequeña");
+        Fuente.add(radioPequeña);
+
+        radioMediana.setSelected(true);
+        radioMediana.setText("Mediana");
+        Fuente.add(radioMediana);
+
+        radioGrande.setSelected(true);
+        radioGrande.setText("Grande");
+        Fuente.add(radioGrande);
+
+        jMenuBar1.add(Fuente);
 
         setJMenuBar(jMenuBar1);
 
@@ -700,7 +725,25 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
         }
         String jugador = nombreJugadores.getSelectedItem().toString();
         Graficas.mostrarGraficoDeLineas(ruta,jugador);
+        
+        
     }//GEN-LAST:event_graficoLineasActionPerformed
+
+    private void exportarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarPDFActionPerformed
+        String equipo = "";
+        if(radioLA.isSelected()){
+            equipo = "Lakers";
+        }
+        if(radioChicago.isSelected()){
+            equipo = "Bulls";
+        }
+        String jugador = nombreJugadores.getSelectedItem().toString();
+        String rutapdf = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Graficas\\"+ jugador +".pdf";
+        String img = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Graficas\\GraficoBarras_"+ jugador + ".jpg";
+        String img2 = "C:\\Users\\Familia\\Documents\\NetBeansProjects\\NBA\\Informes\\Graficas\\GraficoLineas_"+ jugador + ".jpg";
+        Graficas.guardarGraficoEnPDF2(img, img2, rutapdf, jugador, equipo);
+        
+    }//GEN-LAST:event_exportarPDFActionPerformed
     
     
     public static void main(String args[]) {
@@ -718,6 +761,7 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
     private javax.swing.ButtonGroup Equipos;
     private javax.swing.JSpinner FaltasReaDato;
     private javax.swing.JSpinner FaltasRecDato;
+    private javax.swing.JMenu Fuente;
     private javax.swing.ButtonGroup JugadoresBulls;
     private javax.swing.ButtonGroup JugadoresLakers;
     private javax.swing.JLabel Pantalla;
@@ -753,7 +797,10 @@ ArrayList<String> jugadoresLakers = new ArrayList<>(Arrays.asList("Magic Johnson
     private javax.swing.JComboBox<String> nombreJugadores;
     private javax.swing.JRadioButtonMenuItem radioChicago;
     private javax.swing.ButtonGroup radioEquipos;
+    private javax.swing.JRadioButtonMenuItem radioGrande;
     private javax.swing.JRadioButtonMenuItem radioLA;
+    private javax.swing.JRadioButtonMenuItem radioMediana;
+    private javax.swing.JRadioButtonMenuItem radioPequeña;
     private javax.swing.JTextField tirosAnotados;
     private javax.swing.JTextField tirosIntentados;
     private javax.swing.JTextField triplesAnotados;
